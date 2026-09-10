@@ -1,47 +1,62 @@
-# Northstar Analytics Dashboard
+# Northstar OS | Executive Intelligence Dashboard
 
-A polished, responsive executive business intelligence dashboard built as a portfolio project by **Jessica Staats**.
+A premium, responsive business intelligence dashboard concept designed and developed by **Jessica Staats**.
 
-This project was designed to demonstrate more than front-end styling. It shows how raw business metrics can be translated into a clear decision-making interface for executives, founders, and operations teams.
+**Live demo:** https://jessastaats.github.io/Business-Analytics-Dashboard-/
 
-## What this project demonstrates
+Northstar OS was built to demonstrate how business data can become a clear, decision-focused product experience. Instead of simply displaying charts, the interface prioritizes the questions an executive actually needs answered: What changed? Why does it matter? What deserves attention next?
 
-- Responsive dashboard UI design
-- Executive KPI presentation
-- Revenue and customer trend visualization
-- Acquisition channel analysis
-- Business insight prioritization
-- Searchable performance tables
-- Client-side filtering and interactions
-- CSV and report exports
-- Mobile navigation behavior
-- Data storytelling and decision-focused UX
+> **Portfolio disclosure:** Northstar OS and Aster & Co. are fictional. All metrics and business data are simulated for demonstration purposes.
 
-## Key dashboard features
+## The challenge
 
-### Executive KPI layer
-The dashboard surfaces revenue, new customers, conversion rate, and average order value immediately so leadership can understand business health without digging through reports.
+Business dashboards often fail in one of two ways: they overwhelm users with data, or they look polished but provide very little decision support.
 
-### Interactive date ranges
-Users can switch between 30 days, 90 days, 6 months, and 12 months. KPI values and comparison metrics update dynamically.
+The goal for Northstar OS was to create an executive interface that feels credible enough for a real SaaS or internal analytics product while remaining fast, responsive, and immediately understandable.
 
-### Revenue visualization
-A current-vs-previous-period line chart makes growth direction easy to interpret at a glance.
+## What I designed and built
 
-### Acquisition analysis
-A channel-mix visualization shows where customers are coming from and highlights the strongest acquisition sources.
+- Executive KPI architecture for revenue, customers, conversion, and average order value
+- Current-period versus prior-period performance storytelling
+- Interactive 30-day, 90-day, 6-month, and 12-month views
+- Revenue and order trend switching
+- Acquisition channel analysis and efficiency signals
+- Customer growth and retention indicators
+- Prioritized decision-support insights
+- Searchable service-line performance table
+- CSV export functionality
+- Executive brief export functionality
+- Interactive growth-opportunity modal
+- Refresh states, navigation feedback, and micro-interactions
+- Responsive desktop, tablet, and mobile layouts
+- Accessible semantic HTML structure and keyboard-friendly modal behavior
 
-### Customer growth
-A compact bar chart communicates customer expansion over time without overwhelming the interface.
+## Business and UX thinking
 
-### Smart business insights
-The dashboard goes beyond reporting numbers by surfacing action-oriented observations around retention, paid acquisition efficiency, and high-value services.
+### Lead with decisions, not decoration
+The highest-value metrics appear first, supported by context such as prior-period performance, business targets, and operating signals. A user does not need to interpret a wall of charts to understand overall health.
 
-### Service-level performance
-A searchable data table breaks down revenue, order volume, average value, growth, and portfolio share by service category.
+### Add meaning to the numbers
+The dashboard highlights retention, channel efficiency, and premium-service growth so the product behaves more like a decision-support tool than a reporting screen.
 
-### Export functionality
-Users can download service performance data as CSV and generate a basic executive report directly from the interface.
+### Make comparison effortless
+Revenue is shown against the previous period, while service-level revenue share and growth make it easy to identify which offerings are contributing most to performance.
+
+### Preserve trust
+The interface clearly identifies itself as a fictional portfolio concept. No simulated metric is presented as a real client result.
+
+## Interactive functionality
+
+Users can:
+
+- Change reporting periods and dynamically update KPI values
+- Toggle the main performance chart between revenue and orders
+- Search service lines in real time
+- Open a deeper growth-opportunity view
+- Refresh the dashboard state
+- Download service data as CSV
+- Export an executive performance brief
+- Navigate the interface across mobile and desktop layouts
 
 ## Technology
 
@@ -49,24 +64,32 @@ Users can download service performance data as CSV and generate a basic executiv
 - CSS3
 - Vanilla JavaScript
 - Chart.js
-- Responsive CSS Grid and Flexbox
-- Browser Blob API for file exports
+- CSS Grid and Flexbox
+- Browser Blob API
+- GitHub Pages
 
-No framework or build process is required, making the project easy to deploy as a static site using GitHub Pages.
+The application intentionally uses no frontend framework or build process. This keeps the demo lightweight, portable, and easy to deploy while still demonstrating product-level frontend interaction and responsive UI design.
 
-## Design approach
+## Skills demonstrated
 
-The visual direction intentionally avoids the generic "template dashboard" look. The interface uses a restrained executive palette, strong hierarchy, generous spacing, compact data visualization, and business-focused copy.
+**Frontend Development**  
+Responsive HTML/CSS, JavaScript interactions, Chart.js, data-driven UI updates, export functionality
 
-The objective was simple: a decision-maker should be able to open the dashboard and understand what is happening, what changed, and what deserves attention within seconds.
+**UI/UX Design**  
+Visual hierarchy, dashboard information architecture, responsive product design, interaction states, executive usability
 
-## Portfolio note
+**Business Analytics**  
+KPI selection, period comparison, acquisition analysis, retention signals, performance interpretation, data storytelling
 
-Northstar Analytics is a fictional business created for demonstration purposes. The data shown in the project is sample data used to demonstrate dashboard design, front-end development, business analytics presentation, and interactive reporting functionality.
+**Business/Product Thinking**  
+The interface is designed around action and prioritization rather than presenting metrics without context.
 
-## Built by
+## Project role
 
-**Jessica Staats**  
-Web Design · Business Analytics · Project Solutions
+**Concept, UX strategy, interface design, frontend development, simulated data model, and dashboard logic:** Jessica Staats
+
+## Built by Jessica Staats
+
+Web Design • Business Analytics • Project Solutions
 
 Available for freelance and contract projects through Upwork.
