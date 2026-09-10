@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Northstar Analytics executive business intelligence dashboard by Jessica Staats." />
-  <title>Northstar Analytics | Executive Dashboard</title>
+  <meta name="description" content="Northstar OS is a fictional executive analytics dashboard concept designed and developed by Jessica Staats." />
+  <title>Northstar OS | Executive Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -15,32 +15,36 @@
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand-wrap">
-        <div class="brand-mark" aria-hidden="true">N</div>
+        <div class="brand-mark" aria-hidden="true"><span></span></div>
         <div>
-          <div class="brand-name">NORTHSTAR</div>
-          <div class="brand-sub">Analytics</div>
+          <div class="brand-name">NORTHSTAR <b>OS</b></div>
+          <div class="brand-sub">Executive Intelligence</div>
         </div>
       </div>
 
+      <div class="workspace-switcher">
+        <span class="workspace-avatar">AC</span>
+        <div><strong>Aster & Co.</strong><small>Growth Workspace</small></div>
+        <span class="chevron">⌄</span>
+      </div>
+
       <nav class="side-nav" aria-label="Primary navigation">
-        <button class="nav-item active" data-section="overview">
-          <span class="nav-icon">◫</span><span>Overview</span>
-        </button>
-        <button class="nav-item" data-section="revenue">
-          <span class="nav-icon">↗</span><span>Revenue</span>
-        </button>
-        <button class="nav-item" data-section="customers">
-          <span class="nav-icon">◎</span><span>Customers</span>
-        </button>
-        <button class="nav-item" data-section="channels">
-          <span class="nav-icon">⌁</span><span>Channels</span>
-        </button>
+        <p class="nav-label">WORKSPACE</p>
+        <button class="nav-item active" data-section="overview"><span class="nav-icon">◫</span><span>Overview</span></button>
+        <button class="nav-item" data-section="revenue"><span class="nav-icon">↗</span><span>Revenue</span></button>
+        <button class="nav-item" data-section="customers"><span class="nav-icon">◎</span><span>Customers</span></button>
+        <button class="nav-item" data-section="channels"><span class="nav-icon">⌁</span><span>Acquisition</span></button>
       </nav>
 
+      <div class="side-status">
+        <div><span class="live-dot"></span><strong>Data synced</strong></div>
+        <small>Updated 4 minutes ago</small>
+      </div>
+
       <div class="sidebar-card">
-        <div class="sidebar-card-eyebrow">PORTFOLIO PROJECT</div>
-        <strong>Designed & built by<br>Jessica Staats</strong>
-        <p>Business intelligence made clear, actionable, and beautiful.</p>
+        <div class="sidebar-card-eyebrow">PORTFOLIO CONCEPT</div>
+        <strong>Business intelligence, built for decisions.</strong>
+        <p>Designed and developed by Jessica Staats to demonstrate analytics, UX, data visualization, and frontend development.</p>
         <a href="https://www.upwork.com/" target="_blank" rel="noreferrer">Available for projects ↗</a>
       </div>
     </aside>
@@ -50,58 +54,54 @@
         <div class="topbar-left">
           <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
           <div>
-            <p class="eyebrow">EXECUTIVE PERFORMANCE</p>
-            <h1>Business Overview</h1>
+            <div class="breadcrumb">Workspace <span>/</span> Executive Overview</div>
+            <h1>Good morning, Alex.</h1>
+            <p>Your business is trending ahead of plan this period.</p>
           </div>
         </div>
         <div class="top-actions">
-          <label class="select-wrap" aria-label="Date range">
-            <select id="dateRange">
-              <option value="30">Last 30 days</option>
-              <option value="90" selected>Last 90 days</option>
-              <option value="180">Last 6 months</option>
-              <option value="365">Last 12 months</option>
-            </select>
-          </label>
+          <label class="select-wrap" aria-label="Date range"><select id="dateRange"><option value="30">Last 30 days</option><option value="90" selected>Last 90 days</option><option value="180">Last 6 months</option><option value="365">Last 12 months</option></select></label>
+          <button class="icon-btn" id="refreshBtn" aria-label="Refresh dashboard">↻</button>
           <button class="export-btn" id="exportBtn">Export report</button>
         </div>
       </header>
 
       <section class="hero-strip">
-        <div>
-          <p class="hero-kicker">GOOD MORNING, ALEX</p>
-          <h2>Growth is healthy. <span>Your strongest lever is retention.</span></h2>
-          <p>Revenue is pacing ahead of the previous period while repeat-customer value continues to rise.</p>
+        <div class="hero-main">
+          <div class="hero-meta"><span class="signal-pill"><i></i> HEALTHY MOMENTUM</span><span>Q3 operating view</span></div>
+          <h2>Revenue is accelerating, but <span>retention is where the next dollar is easiest to earn.</span></h2>
+          <p>Repeat customers now generate 41% of revenue. Keeping that cohort engaged could create more upside than increasing paid acquisition spend.</p>
+          <div class="hero-actions"><button id="viewInsightBtn">View growth opportunity</button><span>Forecast confidence <strong>94%</strong></span></div>
         </div>
         <div class="hero-score">
           <div class="score-ring"><span>92</span><small>/100</small></div>
-          <div><strong>Business health</strong><small>Excellent</small></div>
+          <div><strong>Business health</strong><small>Excellent</small><em>↑ 4 pts this period</em></div>
         </div>
       </section>
 
       <section class="kpi-grid" aria-label="Key performance indicators">
-        <article class="kpi-card">
-          <div class="kpi-top"><span>Revenue</span><span class="trend positive" id="revenueTrend">+18.4%</span></div>
+        <article class="kpi-card featured">
+          <div class="kpi-top"><span>Net revenue</span><span class="trend positive" id="revenueTrend">+18.4%</span></div>
           <div class="kpi-value" id="revenueValue">$184,620</div>
-          <div class="kpi-foot">vs. previous period</div>
+          <div class="kpi-context"><span>vs. $155,930 prior period</span><strong>On pace</strong></div>
           <div class="sparkline" id="sparkRevenue"></div>
         </article>
         <article class="kpi-card">
           <div class="kpi-top"><span>New customers</span><span class="trend positive" id="customersTrend">+12.1%</span></div>
           <div class="kpi-value" id="customersValue">428</div>
-          <div class="kpi-foot">vs. previous period</div>
+          <div class="kpi-context"><span>46% from organic channels</span><strong>+37</strong></div>
           <div class="sparkline" id="sparkCustomers"></div>
         </article>
         <article class="kpi-card">
           <div class="kpi-top"><span>Conversion rate</span><span class="trend positive" id="conversionTrend">+1.3%</span></div>
           <div class="kpi-value" id="conversionValue">7.8%</div>
-          <div class="kpi-foot">sitewide conversion</div>
+          <div class="kpi-context"><span>Industry target 6.4%</span><strong>Above</strong></div>
           <div class="sparkline" id="sparkConversion"></div>
         </article>
         <article class="kpi-card">
-          <div class="kpi-top"><span>Avg. order value</span><span class="trend positive" id="aovTrend">+8.7%</span></div>
+          <div class="kpi-top"><span>Average order value</span><span class="trend positive" id="aovTrend">+8.7%</span></div>
           <div class="kpi-value" id="aovValue">$142</div>
-          <div class="kpi-foot">per completed order</div>
+          <div class="kpi-context"><span>Premium mix is increasing</span><strong>+$11</strong></div>
           <div class="sparkline" id="sparkAov"></div>
         </article>
       </section>
@@ -109,79 +109,48 @@
       <section class="dashboard-grid two-col-main">
         <article class="panel revenue-panel">
           <div class="panel-head">
-            <div><p class="eyebrow">PERFORMANCE</p><h3>Revenue trend</h3></div>
-            <div class="legend"><span class="legend-dot current"></span>Current <span class="legend-dot previous"></span>Previous</div>
+            <div><p class="eyebrow">PERFORMANCE</p><h3>Revenue trajectory</h3><p class="panel-sub">Actual revenue compared with the prior period.</p></div>
+            <div class="segment-control"><button class="active">Revenue</button><button>Orders</button></div>
           </div>
+          <div class="chart-summary"><div><span>Current period</span><strong>$184.6K</strong></div><div><span>Prior period</span><strong>$155.9K</strong></div><div><span>Variance</span><strong class="positive-text">+$28.7K</strong></div></div>
           <div class="chart-wrap large"><canvas id="revenueChart"></canvas></div>
         </article>
 
-        <article class="panel">
-          <div class="panel-head">
-            <div><p class="eyebrow">ACQUISITION</p><h3>Channel mix</h3></div>
-            <button class="text-button" id="channelDetailBtn">Details</button>
-          </div>
-          <div class="donut-layout">
-            <div class="chart-wrap donut"><canvas id="channelChart"></canvas></div>
-            <div class="channel-list" id="channelList"></div>
-          </div>
+        <article class="panel channel-panel">
+          <div class="panel-head"><div><p class="eyebrow">ACQUISITION</p><h3>Channel efficiency</h3><p class="panel-sub">Share of new customer acquisition.</p></div><button class="text-button" id="channelDetailBtn">View detail</button></div>
+          <div class="donut-layout"><div class="chart-wrap donut"><canvas id="channelChart"></canvas><div class="donut-center"><strong>36%</strong><span>Organic</span></div></div><div class="channel-list" id="channelList"></div></div>
+          <div class="callout"><span>Best opportunity</span><strong>Referral traffic converts 1.8× higher than paid social.</strong></div>
         </article>
       </section>
 
       <section class="dashboard-grid lower-grid">
         <article class="panel">
-          <div class="panel-head">
-            <div><p class="eyebrow">CUSTOMERS</p><h3>Customer growth</h3></div>
-            <span class="mini-badge">+428 net new</span>
-          </div>
+          <div class="panel-head"><div><p class="eyebrow">CUSTOMER BASE</p><h3>Growth and retention</h3><p class="panel-sub">Cumulative active customers over six months.</p></div><span class="mini-badge">+428 net new</span></div>
           <div class="chart-wrap"><canvas id="customerChart"></canvas></div>
+          <div class="micro-stats"><div><span>Repeat revenue</span><strong>41%</strong></div><div><span>90-day retention</span><strong>68%</strong></div><div><span>Churn risk</span><strong class="positive-text">Low</strong></div></div>
         </article>
 
         <article class="panel insight-panel">
-          <div class="panel-head">
-            <div><p class="eyebrow">SMART INSIGHTS</p><h3>What deserves attention</h3></div>
-            <span class="pulse-dot" title="Live insight"></span>
-          </div>
+          <div class="panel-head"><div><p class="eyebrow">DECISION SUPPORT</p><h3>What deserves attention</h3><p class="panel-sub">Prioritized signals based on current performance.</p></div><span class="pulse-dot" title="Live insight"></span></div>
           <div class="insight-list">
-            <div class="insight-item">
-              <span class="insight-icon up">↗</span>
-              <div><strong>Retention is your highest-value lever.</strong><p>Repeat customers now contribute 41% of revenue, up 6 points from the previous period.</p></div>
-            </div>
-            <div class="insight-item">
-              <span class="insight-icon warn">!</span>
-              <div><strong>Paid social efficiency softened.</strong><p>Cost per acquisition increased 9.2%. Shift budget toward organic search and referral campaigns.</p></div>
-            </div>
-            <div class="insight-item">
-              <span class="insight-icon up">↗</span>
-              <div><strong>Premium services are accelerating.</strong><p>Strategy packages grew 24% and carry the strongest average order value in the portfolio.</p></div>
-            </div>
+            <button class="insight-item"><span class="insight-icon up">↗</span><div><small>HIGH IMPACT</small><strong>Protect retention momentum.</strong><p>Repeat customers contribute 41% of revenue, up 6 points from the previous period.</p></div><span class="arrow">›</span></button>
+            <button class="insight-item"><span class="insight-icon warn">!</span><div><small>WATCH</small><strong>Paid social efficiency softened.</strong><p>Acquisition cost increased 9.2%. Organic and referral channels are outperforming.</p></div><span class="arrow">›</span></button>
+            <button class="insight-item"><span class="insight-icon up">↗</span><div><small>GROWTH</small><strong>Premium services are accelerating.</strong><p>Strategy packages grew 24% and carry the strongest average order value.</p></div><span class="arrow">›</span></button>
           </div>
         </article>
       </section>
 
       <section class="panel table-panel">
-        <div class="panel-head table-head">
-          <div><p class="eyebrow">REVENUE DETAIL</p><h3>Performance by service</h3></div>
-          <div class="table-actions">
-            <input type="search" id="serviceSearch" placeholder="Search services" aria-label="Search services" />
-            <button class="text-button" id="downloadCsv">Download CSV</button>
-          </div>
-        </div>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>Service</th><th>Revenue</th><th>Orders</th><th>Avg. value</th><th>Growth</th><th>Share</th></tr></thead>
-            <tbody id="serviceTableBody"></tbody>
-          </table>
-        </div>
+        <div class="panel-head table-head"><div><p class="eyebrow">REVENUE DETAIL</p><h3>Performance by service line</h3><p class="panel-sub">Compare revenue contribution, volume, and growth across offerings.</p></div><div class="table-actions"><input type="search" id="serviceSearch" placeholder="Search services" aria-label="Search services" /><button class="text-button" id="downloadCsv">Download CSV</button></div></div>
+        <div class="table-scroll"><table><thead><tr><th>Service</th><th>Revenue</th><th>Orders</th><th>Avg. value</th><th>Growth</th><th>Revenue share</th></tr></thead><tbody id="serviceTableBody"></tbody></table></div>
       </section>
 
-      <footer>
-        <span>Northstar Analytics · Portfolio concept</span>
-        <span>Designed & developed by <strong>Jessica Staats</strong></span>
-      </footer>
+      <footer><span>Northstar OS · Fictional portfolio concept</span><span>Product design, analytics UX & frontend development by <strong>Jessica Staats</strong></span></footer>
     </main>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="insightModal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose">×</button><p class="eyebrow">GROWTH OPPORTUNITY</p><h3 id="modalTitle">Turn retention into predictable revenue.</h3><p>Repeat buyers are already your highest-efficiency revenue segment. A focused 90-day retention program could increase lifetime value without adding acquisition cost.</p><div class="modal-grid"><div><span>Current repeat revenue</span><strong>41%</strong></div><div><span>Retention rate</span><strong>68%</strong></div><div><span>Priority</span><strong>High</strong></div></div><button class="export-btn" id="modalAction">Add to executive brief</button></div></div>
   <script src="app.js"></script>
 </body>
 </html>
