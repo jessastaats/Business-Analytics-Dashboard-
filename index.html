@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Northstar Analytics executive business intelligence dashboard by Jessica Staats." />
+  <title>Northstar Analytics | Executive Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-wrap">
+        <div class="brand-mark" aria-hidden="true">N</div>
+        <div>
+          <div class="brand-name">NORTHSTAR</div>
+          <div class="brand-sub">Analytics</div>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-section="overview">
+          <span class="nav-icon">◫</span><span>Overview</span>
+        </button>
+        <button class="nav-item" data-section="revenue">
+          <span class="nav-icon">↗</span><span>Revenue</span>
+        </button>
+        <button class="nav-item" data-section="customers">
+          <span class="nav-icon">◎</span><span>Customers</span>
+        </button>
+        <button class="nav-item" data-section="channels">
+          <span class="nav-icon">⌁</span><span>Channels</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-eyebrow">PORTFOLIO PROJECT</div>
+        <strong>Designed & built by<br>Jessica Staats</strong>
+        <p>Business intelligence made clear, actionable, and beautiful.</p>
+        <a href="https://www.upwork.com/" target="_blank" rel="noreferrer">Available for projects ↗</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+          <div>
+            <p class="eyebrow">EXECUTIVE PERFORMANCE</p>
+            <h1>Business Overview</h1>
+          </div>
+        </div>
+        <div class="top-actions">
+          <label class="select-wrap" aria-label="Date range">
+            <select id="dateRange">
+              <option value="30">Last 30 days</option>
+              <option value="90" selected>Last 90 days</option>
+              <option value="180">Last 6 months</option>
+              <option value="365">Last 12 months</option>
+            </select>
+          </label>
+          <button class="export-btn" id="exportBtn">Export report</button>
+        </div>
+      </header>
+
+      <section class="hero-strip">
+        <div>
+          <p class="hero-kicker">GOOD MORNING, ALEX</p>
+          <h2>Growth is healthy. <span>Your strongest lever is retention.</span></h2>
+          <p>Revenue is pacing ahead of the previous period while repeat-customer value continues to rise.</p>
+        </div>
+        <div class="hero-score">
+          <div class="score-ring"><span>92</span><small>/100</small></div>
+          <div><strong>Business health</strong><small>Excellent</small></div>
+        </div>
+      </section>
+
+      <section class="kpi-grid" aria-label="Key performance indicators">
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Revenue</span><span class="trend positive" id="revenueTrend">+18.4%</span></div>
+          <div class="kpi-value" id="revenueValue">$184,620</div>
+          <div class="kpi-foot">vs. previous period</div>
+          <div class="sparkline" id="sparkRevenue"></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-top"><span>New customers</span><span class="trend positive" id="customersTrend">+12.1%</span></div>
+          <div class="kpi-value" id="customersValue">428</div>
+          <div class="kpi-foot">vs. previous period</div>
+          <div class="sparkline" id="sparkCustomers"></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Conversion rate</span><span class="trend positive" id="conversionTrend">+1.3%</span></div>
+          <div class="kpi-value" id="conversionValue">7.8%</div>
+          <div class="kpi-foot">sitewide conversion</div>
+          <div class="sparkline" id="sparkConversion"></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Avg. order value</span><span class="trend positive" id="aovTrend">+8.7%</span></div>
+          <div class="kpi-value" id="aovValue">$142</div>
+          <div class="kpi-foot">per completed order</div>
+          <div class="sparkline" id="sparkAov"></div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid two-col-main">
+        <article class="panel revenue-panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">PERFORMANCE</p><h3>Revenue trend</h3></div>
+            <div class="legend"><span class="legend-dot current"></span>Current <span class="legend-dot previous"></span>Previous</div>
+          </div>
+          <div class="chart-wrap large"><canvas id="revenueChart"></canvas></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">ACQUISITION</p><h3>Channel mix</h3></div>
+            <button class="text-button" id="channelDetailBtn">Details</button>
+          </div>
+          <div class="donut-layout">
+            <div class="chart-wrap donut"><canvas id="channelChart"></canvas></div>
+            <div class="channel-list" id="channelList"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid lower-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">CUSTOMERS</p><h3>Customer growth</h3></div>
+            <span class="mini-badge">+428 net new</span>
+          </div>
+          <div class="chart-wrap"><canvas id="customerChart"></canvas></div>
+        </article>
+
+        <article class="panel insight-panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">SMART INSIGHTS</p><h3>What deserves attention</h3></div>
+            <span class="pulse-dot" title="Live insight"></span>
+          </div>
+          <div class="insight-list">
+            <div class="insight-item">
+              <span class="insight-icon up">↗</span>
+              <div><strong>Retention is your highest-value lever.</strong><p>Repeat customers now contribute 41% of revenue, up 6 points from the previous period.</p></div>
+            </div>
+            <div class="insight-item">
+              <span class="insight-icon warn">!</span>
+              <div><strong>Paid social efficiency softened.</strong><p>Cost per acquisition increased 9.2%. Shift budget toward organic search and referral campaigns.</p></div>
+            </div>
+            <div class="insight-item">
+              <span class="insight-icon up">↗</span>
+              <div><strong>Premium services are accelerating.</strong><p>Strategy packages grew 24% and carry the strongest average order value in the portfolio.</p></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="panel-head table-head">
+          <div><p class="eyebrow">REVENUE DETAIL</p><h3>Performance by service</h3></div>
+          <div class="table-actions">
+            <input type="search" id="serviceSearch" placeholder="Search services" aria-label="Search services" />
+            <button class="text-button" id="downloadCsv">Download CSV</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Service</th><th>Revenue</th><th>Orders</th><th>Avg. value</th><th>Growth</th><th>Share</th></tr></thead>
+            <tbody id="serviceTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        <span>Northstar Analytics · Portfolio concept</span>
+        <span>Designed & developed by <strong>Jessica Staats</strong></span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
